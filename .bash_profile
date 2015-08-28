@@ -11,12 +11,12 @@ fi
 
 alias ll='ls -lah'
 
-if [ -f git-completion.bash ]; then
-  . git-completion.bash
+if [ -f Scripts/git-completion.bash ]; then
+  . Scripts/git-completion.bash
 fi
 
-if [ -f wp-completion.bash ]; then
-	. wp-completion.bash
+if [ -f Scripts/wp-completion.bash ]; then
+	. Scripts/wp-completion.bash
 fi
 
 eval "$(grunt --completion=bash)"
