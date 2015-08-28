@@ -11,6 +11,7 @@
 	c  = commit
 	ca = commit -a
 	cb = checkout -b
+	cl = checkout -- .
 	cm = checkout master
 	co = checkout
 	dm = difftool origin/master --
