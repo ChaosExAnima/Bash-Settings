@@ -19,11 +19,11 @@ CUR_PATH=$(readlink ~/.bash_profile)
 CUR_DIR=$(dirname "${CUR_PATH}")
 
 if [ -f "${CUR_DIR}/git-completion.bash" ]; then
-  . Scripts/git-completion.bash
+  . "${CUR_DIR}/git-completion.bash"
 fi
 
 if [ -f "${CUR_DIR}/wp-completion.bash" ]; then
-	. Scripts/wp-completion.bash
+	. "${CUR_DIR}/wp-completion.bash"
 fi
 
 if [ hash grunt 2>/dev/null ]; then
