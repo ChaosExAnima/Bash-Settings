@@ -18,13 +18,9 @@ fi
 CUR_PATH=$(readlink ~/.bash_profile)
 CUR_DIR=$(dirname "${CUR_PATH}")
 
-if [ -f "${CUR_DIR}/git-completion.bash" ]; then
-  . "${CUR_DIR}/git-completion.bash"
-fi
+. "${HOME}/${CUR_DIR}/git-completion.bash"
 
-if [ -f "${CUR_DIR}/wp-completion.bash" ]; then
-	. "${CUR_DIR}/wp-completion.bash"
-fi
+. "${HOME}/${CUR_DIR}/wp-completion.bash"
 
 if [ hash grunt 2>/dev/null ]; then
 	eval "$(grunt --completion=bash)"
