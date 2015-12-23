@@ -6,6 +6,9 @@ export EDITOR=vim
 
 alias ll='ls -lah'
 
+# Taken from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
+alias gitcl='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+
 if [[ $- == *i* ]]; then
 	# Custom bash prompt via kirsle.net/wizards/ps1.html
 	export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
