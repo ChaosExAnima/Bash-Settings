@@ -14,8 +14,8 @@ if [[ $- == *i* ]]; then
 	export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 fi
 
-if [ -f ~/.bash_custom ]; then
-	source ~/.bash_custom
+if [ -f "$HOME/.bash_custom" ]; then
+	source "$HOME/.bash_custom"
 fi
 
 CUR_PATH=$(readlink ~/.bash_profile)
