@@ -16,7 +16,8 @@
 	co = checkout
 	dm = difftool origin/master --
 	dt = difftool HEAD -- .
-	f  = fetch --all --prune
+	f  = fetch --all
 	st = status
+	su = submodule update
 	up = pull
 	mm = merge origin/master
