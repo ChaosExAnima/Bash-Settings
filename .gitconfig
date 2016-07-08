@@ -6,6 +6,7 @@
 [pull]
 	default = simple
 [alias]
+	b  = branch
 	bm = branch --merged
 	bd = branch -d
 	c  = commit
@@ -21,3 +22,5 @@
 	su = submodule update
 	up = pull
 	mm = merge origin/master
+[github]
+	user = ChaosExAnima
