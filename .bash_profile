@@ -7,13 +7,22 @@ export EDITOR=vim
 alias ll='ls -lah'
 
 # Taken from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
-alias gitcl='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+alias gitcl='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
+
+# Starts a simple HTTP server.
+alias serve='python -m SimpleHTTPServer'
+
+# Opens the iOS Simulation. Mac only.
+if [[ $OSTYPE == *darwin* ]]; then
+	alias iossim='open -a "Simulator"'
+fi
 
 if [[ $- == *i* ]]; then
 	# Custom bash prompt via kirsle.net/wizards/ps1.html
 	export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 fi
 
+# Loads custom bash files, if the file exists.
 if [ -f "$HOME/.bash_custom" ]; then
 	source "$HOME/.bash_custom"
 fi
@@ -28,13 +37,13 @@ CUR_DIR=$(dirname "${CUR_PATH}")
 # Taken from: https://medium.com/@jamischarles/adding-autocomplete-to-npm-install-5efd3c424067
 # BASH standalone npm install autocomplete. Add this to ~/.bashrc file.
 _npm_install_completion () {
-    local words cword
-    if type _get_comp_words_by_ref &>/dev/null; then
-      _get_comp_words_by_ref -n = -n @ -w words -i cword
-    else
-      cword="$COMP_CWORD"
-      words=("${COMP_WORDS[@]}")
-    fi
+	local words cword
+	if type _get_comp_words_by_ref &>/dev/null; then
+		_get_comp_words_by_ref -n = -n @ -w words -i cword
+	else
+		cword="$COMP_CWORD"
+		words=("${COMP_WORDS[@]}")
+	fi
 
 	local si="$IFS"
 
@@ -52,8 +61,16 @@ _npm_install_completion () {
 complete -o default -F _npm_install_completion npm
 ## END BASH npm install autocomplete
 
+# Adds Grunt autocompletion.
+# See: https://github.com/gruntjs/grunt-cli#shell-tab-auto-completion
 if [ hash grunt 2>/dev/null ]; then
 	eval "$(grunt --completion=bash)"
+fi
+
+# Adds Hub alias.
+# See: https://github.com/github/hub#aliasing
+if [ hash hub 2>/dev/null ]; then
+	eval "$(hub alias -s)"
 fi
 
 # For grunt watch.
