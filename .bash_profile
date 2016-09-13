@@ -63,13 +63,13 @@ complete -o default -F _npm_install_completion npm
 
 # Adds Grunt autocompletion.
 # See: https://github.com/gruntjs/grunt-cli#shell-tab-auto-completion
-if [ hash grunt 2>/dev/null ]; then
+if hash grunt 2>/dev/null; then
 	eval "$(grunt --completion=bash)"
 fi
 
 # Adds Hub alias.
 # See: https://github.com/github/hub#aliasing
-if [ hash hub 2>/dev/null ]; then
+if hash hub 2>/dev/null; then
 	eval "$(hub alias -s)"
 fi
 
