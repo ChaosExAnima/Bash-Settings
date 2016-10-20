@@ -18,8 +18,11 @@ if [[ $OSTYPE == *darwin* ]]; then
 fi
 
 if [[ $- == *i* ]]; then
-	# Custom bash prompt via kirsle.net/wizards/ps1.html
-	export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 5)\]@\h \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] "
+	else
+		export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] "
+	fi
 fi
 
 # Loads custom bash files, if the file exists.
