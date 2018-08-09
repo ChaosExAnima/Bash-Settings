@@ -1,16 +1,20 @@
 [user]
 	name = Ephraim Gregor
-	email = ephraim@ephraimgregor.com
+	email = ChaosExAnima@users.noreply.github.com
+	signingkey = 2C7F07CE22D44C75
+[includeIf "gitdir:10up/"]
+	path = .gitconfig-10up
 [push]
 	default = current
 [pull]
 	default = simple
 [alias]
+	current-branch = rev-parse --abbrev-ref HEAD
 	b  = branch
 	bm = branch --merged
 	bd = branch -d
-	c  = commit
-	ca = commit -a
+	c  = commit -S
+	ca = commit -a -S
 	cb = checkout -b
 	cl = checkout -- .
 	cm = checkout master
@@ -22,5 +26,13 @@
 	su = submodule update
 	up = pull
 	mm = merge origin/master
+	pr = remote prune origin
+	logs = log --show-signature
 [github]
 	user = ChaosExAnima
+[credential]
+	helper = cache --timeout=604800
+[core]
+	fileMode = false
+[commit]
+	gpgsign = true
