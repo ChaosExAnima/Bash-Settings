@@ -8,7 +8,6 @@ alias ll='ls -lah'
 
 # Taken from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 alias gitcl='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
-alias gitcls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 
 # Runs a command in a screen.
 alias screencmd='screen -L -dm time'
