@@ -1,9 +1,13 @@
 export PATH=/usr/local/bin:$PATH
-export PATH=~/Scripts:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
 
+# Variables
+CUR_PATH=$(readlink ~/.bash_profile)
+CUR_DIR=$(dirname "${CUR_PATH}")
+
+# Shortcuts
 alias ll='ls -lah'
 
 # Taken from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
@@ -33,9 +37,7 @@ if [ -f "$HOME/.bash_custom" ]; then
 	source "$HOME/.bash_custom"
 fi
 
-CUR_PATH=$(readlink ~/.bash_profile)
-CUR_DIR=$(dirname "${CUR_PATH}")
-
+# Autocompletion
 . "${HOME}/${CUR_DIR}/git-completion.bash"
 
 . "${HOME}/${CUR_DIR}/wp-completion.bash"
