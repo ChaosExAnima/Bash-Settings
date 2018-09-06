@@ -34,5 +34,6 @@
 	helper = cache --timeout=604800
 [core]
 	fileMode = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [commit]
 	gpgsign = true
