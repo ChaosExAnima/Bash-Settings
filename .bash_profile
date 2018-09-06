@@ -13,6 +13,9 @@ alias ll='ls -lah'
 # Taken from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
 alias gitcl='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 
+# Based off this: https://coderwall.com/p/up1qma/git-remove-local-branches-not-on-remote
+alias gitcls='git branch -vv | grep " gone]" | cut -c3- | awk "{print $1}" | xargs git branch -D'
+
 # Runs a command in a screen.
 alias screencmd='screen -L -dm time'
 
