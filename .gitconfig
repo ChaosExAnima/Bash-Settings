@@ -1,9 +1,7 @@
+[include]
+	path = .gitconfig-custom
 [user]
-	name = Ephraim Gregor
-	email = ChaosExAnima@users.noreply.github.com
-	signingkey = 2C7F07CE22D44C75
-[includeIf "gitdir:10up/"]
-	path = .gitconfig-10up
+	name = Ephraim G
 [push]
 	default = current
 [pull]
@@ -13,8 +11,8 @@
 	b  = branch
 	bm = branch --merged
 	bd = branch -d
-	c  = commit -S
-	ca = commit -a -S
+	c  = commit
+	ca = commit -a
 	cb = checkout -b
 	cl = checkout -- .
 	cm = checkout master
@@ -34,6 +32,3 @@
 	helper = cache --timeout=604800
 [core]
 	fileMode = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
-[commit]
-	gpgsign = true
