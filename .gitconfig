@@ -1,5 +1,3 @@
-[include]
-	path = .gitconfig-custom
 [user]
 	name = Ephraim G
 	email = ChaosExAnima@users.noreply.github.com
@@ -33,3 +31,5 @@
 	helper = cache --timeout=604800
 [core]
 	fileMode = false
+[include]
+	path = .gitconfig-custom
