@@ -2,6 +2,7 @@
 	path = .gitconfig-custom
 [user]
 	name = Ephraim G
+	email = ChaosExAnima@users.noreply.github.com
 [push]
 	default = current
 [pull]
