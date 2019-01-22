@@ -1,7 +1,6 @@
-[include]
-	path = .gitconfig-custom
 [user]
 	name = Echo G
+	email = ChaosExAnima@users.noreply.github.com
 [push]
 	default = current
 [pull]
@@ -32,3 +31,5 @@
 	helper = cache --timeout=604800
 [core]
 	fileMode = false
+[include]
+	path = .gitconfig-custom

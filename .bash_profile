@@ -23,6 +23,8 @@ alias screencmd='screen -L -dm time'
 # Starts a simple HTTP server.
 alias serve='python -m SimpleHTTPServer'
 
+alias dc='docker-compose'
+
 # Opens the iOS Simulation. Mac only.
 if [[ $OSTYPE == *darwin* ]]; then
 	alias iossim='open -a "Simulator"'
