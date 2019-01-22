@@ -2,6 +2,7 @@ export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
+export HOSTIP=$(hostname -I | awk '{print $1}')
 
 # Variables
 CUR_PATH=$(readlink ~/.bash_profile)
@@ -14,7 +15,7 @@ alias ll='ls -lah'
 alias gitcl='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 
 # Based off this: https://coderwall.com/p/up1qma/git-remove-local-branches-not-on-remote
-alias gitcls="git branch -vv | grep ' gone]' | cut -c3- | awk '{print \$1}' | xargs git branch -D"
+alias gitcls="git pr && git branch -vv | grep ' gone]' | cut -c3- | awk '{print \$1}' | xargs git branch -D"
 
 # Runs a command in a screen.
 alias screencmd='screen -L -dm time'
