@@ -2,7 +2,6 @@ export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vim
-export HOSTIP=$(hostname -I | awk '{print $1}')
 
 # Variables
 CUR_PATH=$(readlink ~/.bash_profile)
@@ -25,17 +24,17 @@ alias serve='python -m SimpleHTTPServer'
 
 alias dc='docker-compose'
 
-# Opens the iOS Simulation. Mac only.
-if [[ $OSTYPE == *darwin* ]]; then
-	alias iossim='open -a "Simulator"'
-fi
-
 if [[ $- == *i* ]]; then
 	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 		export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 5)\]@\h \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] "
 	else
 		export PS1="\[$(tput setaf 4)\]\u \[$(tput setaf 6)\]\W\\$\[$(tput sgr0)\] "
 	fi
+fi
+
+# macOS is a jerk and doesn't load .bashrc automatically.
+if [ -f "$HOME/.bashrc" ]; then
+	source "$HOME/.bashrc"
 fi
 
 # Loads custom bash files, if the file exists.

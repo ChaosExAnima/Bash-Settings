@@ -33,3 +33,5 @@
 	fileMode = false
 [include]
 	path = .gitconfig-custom
+[commit]
+	gpgsign = true
