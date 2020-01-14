@@ -23,7 +23,7 @@
 	su = submodule update
 	up = pull
 	mm = merge origin/master
-	pr = remote prune origin
+	rp = remote prune origin
 	logs = log --show-signature
 [github]
 	user = ChaosExAnima
