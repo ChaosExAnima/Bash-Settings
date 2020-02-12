@@ -16,8 +16,8 @@
 	cl = checkout -- .
 	cm = checkout master
 	co = checkout
-	dm = difftool origin/master --
-	dt = difftool HEAD -- .
+	dm = difftool --dir-diff origin/master --
+	dt = difftool --dir-diff
 	f  = fetch --all
 	st = status
 	su = submodule update

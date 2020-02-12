@@ -87,5 +87,7 @@ if hash hub 2>/dev/null; then
 	eval "$(hub alias -s)"
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # For grunt watch.
 ulimit -n 1024
