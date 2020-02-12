@@ -23,7 +23,7 @@
 	su = submodule update
 	up = pull
 	mm = merge origin/master
-	pr = remote prune origin
+	rp = remote prune origin
 	logs = log --show-signature
 [github]
 	user = ChaosExAnima
@@ -33,3 +33,5 @@
 	fileMode = false
 [include]
 	path = .gitconfig-custom
+[commit]
+	gpgsign = true
